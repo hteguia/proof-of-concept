@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/KeycloakBlazorWebAssembly/.vs
+/KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.ApiService/bin/Debug/net8.0
+/KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.ApiService/obj
+/KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.AppHost/bin/Debug/net8.0
+/KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.AppHost/obj
+/KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.ServiceDefaults/bin/Debug/net8.0
+/KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.ServiceDefaults/obj
+/KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.Web/bin/Debug/net8.0
+/KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.Web/obj
