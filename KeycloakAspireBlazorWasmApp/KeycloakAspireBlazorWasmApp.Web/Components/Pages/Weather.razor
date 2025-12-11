@@ -1,0 +1,98 @@
+﻿@page "/weather"
+@using KeycloakAspireBlazorWasmApp.Web
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@attribute [StreamRendering(true)]
+@attribute [OutputCache(Duration = 5)]
+@attribute [Authorize(Roles = "Administrator")]
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject WeatherApiClient WeatherApi
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather</h1>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}
+
+@if (canSeeContent)
+{
+    <p>You can see this because you have the correct role.</p>
+}
+
+<p>This component demonstrates showing data loaded from a backend API service.</p>
+<AuthorizeView>
+    <Authorized>
+        @if (isLoading)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else if (forecasts == null && string.IsNullOrEmpty(errorMessage))
+        {
+            <p><em>No data available.</em></p>
+        }
+        else if (forecasts != null)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th aria-label="Temperature in Celsius">Temp. (C)</th>
+                        <th aria-label="Temperature in Farenheit">Temp. (F)</th>
+                        <th>Summary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var forecast in forecasts)
+                    {
+                        <tr>
+                            <td>@forecast.Date.ToShortDateString()</td>
+                            <td>@forecast.TemperatureC</td>
+                            <td>@forecast.TemperatureF</td>
+                            <td>@forecast.Summary</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <p><strong>Please <a href="authentication/login">log in</a> to view the weather data.</strong></p>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private WeatherForecast[]? forecasts;
+    private bool canSeeContent;
+    private bool isLoading = true;
+    private string? errorMessage;
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        isLoading = true;
+        errorMessage = null;
+        try
+        {
+            if (user.IsInRole("Administrator"))
+            {
+                canSeeContent = true;
+            }
+
+            if (user.Identity?.IsAuthenticated == true && user.IsInRole("Administrator"))
+            {
+                forecasts = await WeatherApi.GetWeatherAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}

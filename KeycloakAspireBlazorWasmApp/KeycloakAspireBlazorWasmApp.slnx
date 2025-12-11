@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="KeycloakAspireBlazorWasmApp.ApiService/KeycloakAspireBlazorWasmApp.ApiService.csproj" />
+  <Project Path="KeycloakAspireBlazorWasmApp.AppHost/KeycloakAspireBlazorWasmApp.AppHost.csproj" />
+  <Project Path="KeycloakAspireBlazorWasmApp.ServiceDefaults/KeycloakAspireBlazorWasmApp.ServiceDefaults.csproj" />
+  <Project Path="KeycloakAspireBlazorWasmApp.Web/KeycloakAspireBlazorWasmApp.Web.csproj" />
+</Solution>

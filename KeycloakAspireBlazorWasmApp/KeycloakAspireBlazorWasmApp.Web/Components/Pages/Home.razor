@@ -1,0 +1,60 @@
+﻿@page "/"
+
+
+<PageTitle>Home</PageTitle>
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h1 class="mb-3">Role-Based Authentication Demo</h1>
+                    <p class="lead">This demo showcases how to protect Blazor web app pages and backend APIs using role-based authentication and authorization.</p>
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item">
+                            <span class="fw-bold text-primary">Web App Authorization:</span> Pages are protected using <code>[Authorize]</code> and <code>[Authorize(Roles = "...")]</code> attributes. Unauthorized users see a friendly access denied message.
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold text-success">API Authorization:</span> Minimal API endpoints require roles and return 403 Forbidden for unauthorized access.
+                        </li>
+                    </ul>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-primary">
+                                <div class="card-body text-center">
+                                    <span class="display-6 text-primary"><i class="bi bi-box-seam"></i></span>
+                                    <h5 class="card-title mt-2">Products</h5>
+                                    <p class="card-text">CRUD operations protected by role-based authorization. Only authorized users can view, add, edit, or delete products.</p>
+                                    <a href="products" class="btn btn-outline-primary">View Products</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-success">
+                                <div class="card-body text-center">
+                                    <span class="display-6 text-success"><i class="bi bi-cloud-sun"></i></span>
+                                    <h5 class="card-title mt-2">Weather</h5>
+                                    <p class="card-text">Weather data page protected by <code>Administrator</code> role. Shows API data only to authorized users.</p>
+                                    <a href="weather" class="btn btn-outline-success">View Weather</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-info">
+                                <div class="card-body text-center">
+                                    <span class="display-6 text-info"><i class="bi bi-key"></i></span>
+                                    <h5 class="card-title mt-2">Access Token</h5>
+                                    <p class="card-text">View and copy your current access token. Useful for testing API calls and debugging authentication.</p>
+                                    <a href="token" class="btn btn-outline-info">View Token</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-info mt-3">
+                <strong>Tip:</strong> Try accessing protected pages with different roles to see how authorization works for both the web app and APIs.
+            </div>
+        </div>
+    </div>
+</div>

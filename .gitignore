@@ -11,3 +11,14 @@
 /KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.ServiceDefaults/obj
 /KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.Web/bin/Debug/net8.0
 /KeycloakBlazorWebAssembly/KeycloakBlazorWebAssembly.Web/obj
+/KeycloakAspireBlazorWasmApp/.vs
+/KeycloakAspireBlazorWasmApp/KeycloakAspireBlazorWasmApp.ApiService/obj
+/KeycloakAspireBlazorWasmApp/KeycloakAspireBlazorWasmApp.ApiService/bin/Debug/net10.0
+/KeycloakAspireBlazorWasmApp/KeycloakAspireBlazorWasmApp.AppHost/bin/Debug/net10.0
+/KeycloakAspireBlazorWasmApp/KeycloakAspireBlazorWasmApp.AppHost/obj
+/KeycloakAspireBlazorWasmApp/KeycloakAspireBlazorWasmApp.ServiceDefaults/bin/Debug/net10.0
+/KeycloakAspireBlazorWasmApp/KeycloakAspireBlazorWasmApp.ServiceDefaults/obj
+/KeycloakAspireBlazorWasmApp/KeycloakAspireBlazorWasmApp.Web/bin/Debug/net10.0
+/KeycloakAspireBlazorWasmApp/KeycloakAspireBlazorWasmApp.Web/obj
+/SonarQubeMcpBadCode/obj/Debug/net8.0
+/SonarQubeMcpBadCode/obj
