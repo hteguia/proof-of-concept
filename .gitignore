@@ -22,3 +22,6 @@
 /KeycloakAspireBlazorWasmApp/KeycloakAspireBlazorWasmApp.Web/obj
 /SonarQubeMcpBadCode/obj/Debug/net8.0
 /SonarQubeMcpBadCode/obj
+/BlazorWasmJsRuntime/.vs/BlazorWasmJsRuntime.slnx
+/BlazorWasmJsRuntime/BlazorWasmJsRuntime/bin/Debug/net10.0
+/BlazorWasmJsRuntime/BlazorWasmJsRuntime/obj
